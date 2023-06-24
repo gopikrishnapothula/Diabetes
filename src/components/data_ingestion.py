@@ -4,6 +4,9 @@ import sys
 from src.exception import CustomException
 from src.logger import logging
 
+
+
+
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
@@ -12,8 +15,8 @@ from dataclasses import dataclass
 
 from src.components.data_transformation import Datatranformation
 from src.components.data_transformation import DataTransformationConfig
-'''
-from src.components.model_trainer import ModelTrainer'''
+
+from src.components.model_trainer import ModelTrainer
 
 @dataclass
 class DataIngestionConfig:
@@ -34,6 +37,9 @@ class DataIngestion:
             logging.info("Created data frame from CSV")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
+            
+
+
 
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
 
@@ -56,6 +62,6 @@ if __name__=="__main__":
 
     data_transformation=Datatranformation()
     train_data,test_data=data_transformation.initiate_data_transformation(train_data,test_data)
-'''
+
     model_trainer=ModelTrainer()
-    print(model_trainer.initiate_model_trainer(train_data,test_data))'''
+    print(model_trainer.initiate_model_trainer(train_data,test_data))
