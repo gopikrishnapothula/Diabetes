@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from src.pipeline.predict_pipeline import CustomData,PredictPipline
+from predict_pipeline import CustomData,PredictPipline
 
 # Create your views here.
 
